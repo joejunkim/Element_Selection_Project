@@ -60,18 +60,40 @@ window.addEventListener("DOMContentLoaded", event => {
   list.setAttribute('class', 'details')
   document.body.appendChild(list);
 
+  const clock = document.createElement("span");
+  // document.body.appendChild(clock);
+
+  const getTime = () => {
+    const date = new Date();
+    const seconds = date.getSeconds();
+    const minutes = date.getMinutes();
+    const hours = date.getHours();
+
+    clock.innerHTML = `${hours}:${minutes}:${seconds}`
+  }
+  // let ourUL = document.getElementById("description")
+  // console.log(ourUL)
+  // console.log(newListItem)
+
+  let time = setInterval(getTime, 1000);
+  let test = "time"
   const detailsArr = [
     "<li>I am a high school chemistry teacher.</li>",
     "<li>I live in ABQ, New Mexico.</li>",
     "<li>I have a wife and two children.</li>",
-    "<li>My brother-in-law is a DEA agent.</li>"
+    "<li>My brother-in-law is a DEA agent.</li>",
   ];
 
   const liString = detailsArr.join(" ");
 
   const listElement = document.getElementById("description");
-  console.log(listElement);
+  // console.log(listElement);
   listElement.innerHTML = liString;
+  let newListItem = document.createElement("li")
+  newListItem.setAttribute("id", "date")
+  newListItem.innerHTML = "The current time is "
+  newListItem.appendChild(clock)
+  listElement.appendChild(newListItem)
 
   let indivListEle = document.querySelectorAll('li');   //this is to get those list items --> this is a NodeList
   // console.log(indivListEle);
@@ -83,9 +105,6 @@ window.addEventListener("DOMContentLoaded", event => {
   })
 
   // li.setAttribute("class", "detail")
-
-  const clock = document.createElement("div");
-  
 
 
 });
