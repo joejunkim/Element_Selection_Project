@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", event => {
   // Your Javascript goes here
 
   let h1 = document.createElement('h1');
-  h1.setAttribute('id', 'name');
+  h1.setAttribute('class', 'name');
 
   // let textInh1 = document.createTextNode('Walter White');
 
@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", event => {
   // listItem1.appendChild(listItem1Content);
 
   //Another method
-//list.innerHTML = '<li>I live in NM</li>'
+  //list.innerHTML = '<li>I live in NM</li>'
 
   // const listItem2 = document.createElement("li");
   // const listItem2Content = document.createTextNode(
@@ -55,7 +55,9 @@ window.addEventListener("DOMContentLoaded", event => {
   // document.body.appendChild(list)
 
   let list = document.createElement('ul');
+
   list.setAttribute('id', 'description');
+  list.setAttribute('class', 'details')
   document.body.appendChild(list);
 
   const detailsArr = [
@@ -67,16 +69,23 @@ window.addEventListener("DOMContentLoaded", event => {
 
   const liString = detailsArr.join(" ");
 
-  // const listElement = document.getElementById("description");
-
-  const listElement = document.getElementsByTagName("li");
- console.log(listElement)
+  const listElement = document.getElementById("description");
+  console.log(listElement);
   listElement.innerHTML = liString;
 
+  let indivListEle = document.querySelectorAll('li');   //this is to get those list items --> this is a NodeList
+  // console.log(indivListEle);
 
+  indivListEle.forEach((item) => {                   //iterating through list items NodeList to setAttribute of each
+    item.setAttribute('class', 'detail')
+    //Another method to set class name, use className property
+    // item.className = 'detail'            //not a method, is a property
+  })
+
+  // li.setAttribute("class", "detail")
+
+  const clock = document.createElement("div");
   
-
-
 
 
 });
