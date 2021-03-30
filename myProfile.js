@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", event => {
   // Your Javascript goes here
 
   let h1 = document.createElement('h1');
-  h1.setAttribute('id', 'name');
+  h1.setAttribute('class', 'name');
 
   // let textInh1 = document.createTextNode('Walter White');
 
@@ -56,6 +56,7 @@ window.addEventListener("DOMContentLoaded", event => {
 
   let list = document.createElement('ul');
   list.setAttribute('id', 'description');
+  list.setAttribute('class', 'details')
   document.body.appendChild(list);
 
   const detailsArr = [
@@ -66,14 +67,10 @@ window.addEventListener("DOMContentLoaded", event => {
   ];
 
   const liString = detailsArr.join(" ");
-
-  // const listElement = document.getElementById("description");
-
-  const listElement = document.getElementsByTagName("li");
- console.log(listElement)
+  const listElement = document.getElementById("description");
   listElement.innerHTML = liString;
 
-
+  li.setAttribute("class", "detail")
 
 
 });
