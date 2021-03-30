@@ -72,6 +72,7 @@ window.addEventListener("DOMContentLoaded", event => {
   const listElement = document.getElementById("description");
   console.log(listElement);
   listElement.innerHTML = liString;
+  
 
   let indivListEle = document.querySelectorAll('li');   //this is to get those list items --> this is a NodeList
   // console.log(indivListEle);
@@ -85,7 +86,7 @@ window.addEventListener("DOMContentLoaded", event => {
   // li.setAttribute("class", "detail")
 
   const clock = document.createElement("div");
-  
+
 
 
 });
